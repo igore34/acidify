@@ -30,3 +30,4 @@ Also check out the sample project.
 Acidify requires iOS 7.1 or newer. 
 
 Acidify performance depends on the complexity and performance of your app's original UI. For small and medium sized apps, Acidify typically runs at ~60 FPS even on old devices like iPhone 4.
+User interaction might become slow if you have a lot threads in your app, or lots of UIViews.

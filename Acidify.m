@@ -243,7 +243,7 @@ static void matrix_from_orientation(UIDeviceOrientation orientation, AcidMatrix4
     }
 }
 
-UIViewController* find_original_viewcontroller() {
+static UIViewController* find_original_viewcontroller() {
     
     UIViewController* controller = nil;
     
@@ -730,6 +730,7 @@ static const GLchar fsh_code[] = "\
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
     self.captureThread = [[NSThread alloc] initWithTarget:self selector:@selector(capture) object:nil];
+    [self.captureThread setThreadPriority:1.0];
     [self.captureThread start];
     
     [self registerForAppNotifications];
